@@ -18,7 +18,7 @@ const pages = ["Generate", "Schedule", "Pricing"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function TopBar() {
-  const { showDrawer, handleShowDrawer } =
+  const { showDrawer, handleShowDrawer, hasDrawer } =
     React.useContext<IDrawerContextValue>(DrawerContext);
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
@@ -56,15 +56,17 @@ function TopBar() {
       }}
     >
       <Toolbar>
-        <IconButton
-          color="inherit"
-          aria-label="open drawer"
-          onClick={handleShowDrawer}
-          edge="start"
-          sx={{ mr: 2, ...(showDrawer && { display: "none" }) }}
-        >
-          <MenuIcon />
-        </IconButton>
+        {hasDrawer && (
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleShowDrawer}
+            edge="start"
+            sx={{ mr: 2, ...(showDrawer && { display: "none" }) }}
+          >
+            <MenuIcon />
+          </IconButton>
+        )}
         <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
           {pages.map((page) => (
             <Button

@@ -16,15 +16,6 @@ initializeApp({
 
 app.listen(appConfig.port, () => console.log('listening on port ' + appConfig.port));
 
-// import SeleniumServices from './src/services/SeleniumServices';
-
-// const seleniumServices = new SeleniumServices();
-
-// (async () => {
-//   // const imageSources = await seleniumServices.initialize();
-//   console.log({imageSources});
-// })();
-
 // cron.schedule(
 //   '* * * * *',
 //   () => {

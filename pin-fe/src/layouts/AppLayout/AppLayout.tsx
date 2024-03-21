@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { IHomePage } from "../../interface";
 import TopBar from "./TopBar";
 import DrawerContextProvider from "../../contexts/DrawerContext";

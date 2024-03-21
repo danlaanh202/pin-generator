@@ -1,7 +1,7 @@
-import imageRoutes from './imageRoutes';
+import commonRoutes from './commonRoutes';
 
 function route(app) {
-  app.use('/images', imageRoutes);
+  app.use('/images', commonRoutes);
 }
 
 export default route;
