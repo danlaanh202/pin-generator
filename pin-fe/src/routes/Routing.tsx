@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import defaultRoutes from "./defaultRoutes";
-import AppLayout from "../layouts/AppLayout";
+import AppLayout from "../layouts/AppLayout/AppLayout";
 import NotFound from "../pages/NotFound";
 
 const Routing = ({ prefix = "" }) => {
