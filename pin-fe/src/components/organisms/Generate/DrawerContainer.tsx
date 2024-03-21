@@ -25,6 +25,7 @@ import { DrawerContext } from "../../../contexts/DrawerContext";
 import { IDrawerContextValue } from "../../../interface";
 import { commonColors } from "../../../const/color";
 import SingleColorPicker from "../../atoms/SingleColorPicker";
+import useFetchApi from "../../../hooks/api/useFetchApi";
 
 const DrawerContainer = () => {
   const { showDrawer, handleCloseDrawer } =
@@ -34,6 +35,12 @@ const DrawerContainer = () => {
   const [color, setColor] = useState<String>(commonColors[0]);
   const handlePickColor = (value: String) => setColor(value);
   const theme = useTheme();
+
+  const { data } = useFetchApi({
+    url: "http://localhost:5000/pinterest/common?url=https://willtiptop.com",
+  });
+
+  console.log({ data });
 
   return (
     <Drawer

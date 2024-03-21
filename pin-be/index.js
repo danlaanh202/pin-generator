@@ -4,11 +4,14 @@ import appConfig from './src/config/appConfig';
 import cron from 'node-cron';
 import serviceAccount from './src/serviceAccount.json';
 import {cert, initializeApp} from 'firebase-admin/app';
+import route from './src/routes';
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+route(app);
 
 initializeApp({
   credential: cert(serviceAccount)

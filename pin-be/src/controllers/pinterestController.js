@@ -39,9 +39,9 @@ export const getBoards = async (_, res) => {
 
 export const generateDataFromUrl = async (req, res) => {
   try {
-    const {url} = req.params;
+    const {url} = req.query;
     const {images, title} = await seleniumServices.initialize(url);
-    return res.status(200).json({images, title});
+    return res.status(200).json({data: {images, title}});
   } catch (e) {
     return res.status(500).json({error: e.message});
   }

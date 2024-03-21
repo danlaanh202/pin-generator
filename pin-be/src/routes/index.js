@@ -1,7 +1,7 @@
-import commonRoutes from './commonRoutes';
+import pinterestRoutes from './pinterestRoutes';
 
 function route(app) {
-  app.use('/images', commonRoutes);
+  app.use('/pinterest', pinterestRoutes);
 }
 
 export default route;

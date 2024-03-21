@@ -16,11 +16,18 @@ export default class SeleniumServices {
     await this.driver.sleep(2000);
   }
   async getAllImages() {
-    const images = await this.driver.findElements(By.tagName('img'));
+    const images = await this.driver.findElements(By.css('img'));
     return await Promise.all([...images].map(image => image.getAttribute('src')));
   }
   async getTitle() {
-    return await this.driver.findElement(By.tagName('h1'));
+    try {
+      const title = await this.driver.findElement(By.css('h1'));
+      console.log({title});
+      return title;
+    } catch (e) {
+      console.error(e);
+      return '';
+    }
   }
   async initialize(url) {
     try {

@@ -8,8 +8,6 @@ import { useEffect } from "react";
 const useClickOutside = (ref: any, handler: any) => {
   useEffect(() => {
     const listener = (event: any) => {
-      console.log(ref.current);
-      console.log(event.which);
       if (
         !ref.current ||
         ref.current.contains(event.target) ||
