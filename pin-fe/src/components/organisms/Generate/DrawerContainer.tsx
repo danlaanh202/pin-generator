@@ -36,11 +36,10 @@ const DrawerContainer = () => {
   const handlePickColor = (value: String) => setColor(value);
   const theme = useTheme();
 
-  const { data } = useFetchApi({
-    url: "http://localhost:5000/pinterest/common?url=https://willtiptop.com",
-  });
+  // const { data } = useFetchApi({
+  //   url: "http://localhost:5000/pinterest/common?url=https://willtiptop.com",
+  // });
 
-  console.log({ data });
 
   return (
     <Drawer

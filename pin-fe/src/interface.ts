@@ -22,3 +22,4 @@ export interface IDrawerContextValue {
 }
 
 export interface IGenerateContextValue {}
+export interface ITemplateContextValue {}

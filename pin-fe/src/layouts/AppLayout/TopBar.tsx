@@ -20,19 +20,12 @@ const settings = ["Profile", "Account", "Dashboard", "Logout"];
 function TopBar() {
   const { showDrawer, handleShowDrawer, hasDrawer } =
     React.useContext<IDrawerContextValue>(DrawerContext);
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
 
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
   };
 
   const handleCloseUserMenu = () => {
@@ -71,7 +64,7 @@ function TopBar() {
           {pages.map((page) => (
             <Button
               key={page}
-              onClick={handleCloseNavMenu}
+              href={`/${page.toLowerCase()}`}
               sx={{ color: "white", display: "block" }}
             >
               {page}
